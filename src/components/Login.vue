@@ -29,11 +29,7 @@
 </template>
 
 <script>
-export default {
-    method :{
 
-    }
-}
 </script>
 
 <style scoped>

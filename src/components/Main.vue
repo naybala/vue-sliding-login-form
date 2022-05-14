@@ -3,6 +3,7 @@
       <div class="forms-container">
         <div class="signin-signup">
             <Login/>
+            <SignUp/>
         </div>
       </div>
 
@@ -14,7 +15,7 @@
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
               ex ratione. Aliquid!
             </p>
-            <button class="btn transparent" id="sign-up-btn">
+            <button class="btn transparent" @click="changingUi">
               Sign up
             </button>
           </div>
@@ -27,11 +28,11 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
               laboriosam ad deleniti.
             </p>
-            <button class="btn transparent" id="sign-in-btn">
+            <button class="btn transparent" @click="UndoUi">
               Sign in
             </button>
           </div>
-          <img src="img/register.svg" class="image" alt="" />
+          <img src="../../public/register.svg" class="image" alt="" />
         </div>
       </div>
     </div>
@@ -39,11 +40,21 @@
 
 <script>
 import Login from './Login.vue'
-
-
+import SignUp from './SignUp.vue'
 export default {
   components :{
       Login,
+      SignUp,
+  },
+  methods : {
+      changingUi(){
+         const container = document.querySelector(".container");
+         container.classList.add("sign-up-mode");
+      },
+      UndoUi(){
+           const container = document.querySelector(".container");
+            container.classList.remove("sign-up-mode");
+      }
   }
 };
 </script>
@@ -191,14 +202,14 @@ form.sign-in-form {
 .container:before {
   content: "";
   position: absolute;
-  height: 2000px;
+  height: 2500px;
   width: 2000px;
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
   background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
   transition: 1.8s ease-in-out;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   z-index: 6;
 }
 
