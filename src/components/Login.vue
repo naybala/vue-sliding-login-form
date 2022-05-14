@@ -51,11 +51,11 @@
 </template>
 
 <script>
-// export default {
-//     method :{
+export default {
+    method :{
 
-//     }
-// }
+    }
+}
 </script>
 
 <style scoped>
